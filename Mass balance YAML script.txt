@@ -96,7 +96,7 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsTotalFlow
-    labelColor:						# Define the thresholds for the data and the label colour
+    fillColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "green", level: 0}
         - {color: "red", level: 800}
