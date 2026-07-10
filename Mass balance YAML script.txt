@@ -104,7 +104,7 @@ cells:
     labelColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "black", level: 0}
-        - {color: "white", level: ScrubberFeedLimit}
+        - {color: "white", level: *ScrubberFeedLimit}
   Stream2TotalFlow_copy: *S2TF
 
   Stream2SolidsFlow: &S2SF
