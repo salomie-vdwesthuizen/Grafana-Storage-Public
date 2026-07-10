@@ -46,10 +46,6 @@ cells:
       separator: "replace"				# Replace the text in the draw io shape with the data from IDEAS
       units: "none"
       decimalPoints: *decimalPointsTotalFlow		# Define number of decimal points via alias anchored at top of script
-    labelColor:						# Define the thresholds for the data and the label colour
-      thresholds:
-        - {color: "green", level: 0}
-        - {color: "orange", level: 50}
   Stream1TotalFlow_copy: *S1TF				# Apply the same subparagraph to the stream table placed adjacent to the stream
 
   Stream1SolidsFlow: &S1SF
@@ -100,6 +96,10 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsTotalFlow
+    labelColor:						# Define the thresholds for the data and the label colour
+      thresholds:
+        - {color: "green", level: 0}
+        - {color: "orange", level: 900}
   Stream2TotalFlow_copy: *S2TF
 
   Stream2SolidsFlow: &S2SF
