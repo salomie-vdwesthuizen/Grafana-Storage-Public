@@ -99,7 +99,7 @@ cells:
     fillColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "green", level: 0}
-        - {color: "red", level: 900}
+        - {color: "red", level: 800}
     labelColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "black", level: 0}
