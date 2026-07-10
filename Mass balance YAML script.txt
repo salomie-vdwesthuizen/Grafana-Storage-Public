@@ -12,6 +12,7 @@ definitions:
   - decimalPoints: &decimalPointsDensity 0 # Define decimal points for density
   - decimalPoints: &decimalPointsSolids% 0 # Define decimal points for solids wt%
   - decimalPoints: &decimalPointsSolution% 0 # Define decimal points for solution wt%
+  - level: &ScrubberFeedLimit 900
 
 #------------------------------------------------------------------------------
 # Column Definitions. Cannot alias column names. Check and replace for each stream if table configuration changes.
@@ -99,11 +100,11 @@ cells:
     fillColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "green", level: 0}
-        - {color: "red", level: 800}
+        - {color: "red", level: *ScrubberFeedLimit}
     labelColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "black", level: 0}
-        - {color: "white", level: 800}
+        - {color: "white", level: ScrubberFeedLimit}
   Stream2TotalFlow_copy: *S2TF
 
   Stream2SolidsFlow: &S2SF
