@@ -100,6 +100,10 @@ cells:
       thresholds:
         - {color: "green", level: 0}
         - {color: "red", level: 900}
+    labelColor:						# Define the thresholds for the data and the label colour
+      thresholds:
+        - {color: "black", level: 0}
+        - {color: "white", level: 900}
   Stream2TotalFlow_copy: *S2TF
 
   Stream2SolidsFlow: &S2SF
