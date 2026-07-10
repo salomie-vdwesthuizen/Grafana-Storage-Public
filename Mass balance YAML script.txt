@@ -26,10 +26,10 @@ definitions:
 # StreamA6 = Field26
 # StreamA7 = Field27
 # StreamA10 = Field30
+# StreamA26 = Field45
 #------------------------------------------------------------------------------
 # Panel Config
 
-gradientMode: "hue"
 cellIdPreamble: "cell-"
 dataRefTransform:					# This paragraph is required in order to reference a single cell in a table. See https://github.com/andymchugh/andrewbmchugh-flow-panel/blob/main/src/README.md
   namespaced: true
