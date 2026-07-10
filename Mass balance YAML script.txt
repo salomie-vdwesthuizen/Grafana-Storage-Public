@@ -99,7 +99,7 @@ cells:
     labelColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "green", level: 0}
-        - {color: "orange", level: 900}
+        - {color: "red", level: 800}
   Stream2TotalFlow_copy: *S2TF
 
   Stream2SolidsFlow: &S2SF
