@@ -1,0 +1,543 @@
+---
+# This panelConfig is intended for use with the MinROC flowsheet.
+
+#------------------------------------------------------------------------------
+# YAML Aliases to simplify maintenance
+
+definitions:
+  - &Parameter Field1										# Anchor the column "Field1" to alias "Parameter"
+  - decimalPoints: &decimalPointsTotalFlow 0 # Define decimal points for total flow
+  - decimalPoints: &decimalPointsSolidsFlow 0 # Define decimal points for solids flow
+  - decimalPoints: &decimalPointsSolutionFlow 0 # Define decimal points for solution flow
+  - decimalPoints: &decimalPointsDensity 0 # Define decimal points for density
+  - decimalPoints: &decimalPointsSolids% 0 # Define decimal points for solids wt%
+  - decimalPoints: &decimalPointsSolution% 0 # Define decimal points for solution wt%
+
+#------------------------------------------------------------------------------
+# Column Definitions. Cannot alias column names. Check and replace for each stream if table configuration changes.
+
+# Stream1 = Field3
+# Stream2 = Field13
+# StreamA1 = Field21
+# StreamA2 = Field22
+# StreamA3 = Field23
+# StreamA4 = Field24
+# StreamA5 = Field25
+# StreamA6 = Field26
+# StreamA7 = Field27
+# StreamA10 = Field30
+#------------------------------------------------------------------------------
+# Panel Config
+
+gradientMode: "hue"
+cellIdPreamble: "cell-"
+dataRefTransform:					# This paragraph is required in order to reference a single cell in a table. See https://github.com/andymchugh/andrewbmchugh-flow-panel/blob/main/src/README.md
+  namespaced: true
+  queries:
+    A: {tabularKeyColumn: *Parameter}			# Define Key column in query A (i.e. mass balance) that will be used in the dataref for each cell.
+
+cells: 
+
+# ------------------Stream 1----------------------	# Instantiate for each stream. Replacements required: "Stream1" -> Streamx; S1 -> Sx; Replace field name so that stream and field name match. x = new stream number.
+
+  Stream1TotalFlow: &S1TF				# Key "Stream1TotalFlow" is the ID of the shape block in the mass balance in draw io. Anchor subparagraph for reuse.
+    dataRef: "A.TotalFlow.Field3"			# Data to be taken from query A, where "Parameter" = "Total Flow" (i.e. the row) and the column name is "Field3"
+    label:
+      separator: "replace"				# Replace the text in the draw io shape with the data from IDEAS
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow		# Define number of decimal points via alias anchored at top of script
+    labelColor:						# Define the thresholds for the data and the label colour
+      thresholds:
+        - {color: "green", level: 0}
+        - {color: "orange", level: 50}
+  Stream1TotalFlow_copy: *S1TF				# Apply the same subparagraph to the stream table placed adjacent to the stream
+
+  Stream1SolidsFlow: &S1SF
+    dataRef: "A.SolidsFlow.Field3"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  Stream1SolidsFlow_copy: *S1SF
+
+  Stream1SolutionFlow: &S1SLF
+    dataRef: "A.SolutionFlow.Field3"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  Stream1SolutionFlow_copy: *S1SLF
+
+  Stream1Density: &S1D
+    dataRef: "A.Density.Field3"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  Stream1Density_copy: *S1D
+
+  Stream1SolidsWt%: &S1SW
+    dataRef: "A.SolidsWt%.Field3"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  Stream1SolidsWt%_copy: *S1SW
+
+  Stream1SolutionWt%: &S1SLW
+    dataRef: "A.SolutionWt%.Field3"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  Stream1SolutionWt%_copy: *S1SLW
+
+# ------------------Stream 2---------------------------------------------------------------------------------------------------
+
+  Stream2TotalFlow: &S2TF
+    dataRef: "A.TotalFlow.Field13"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  Stream2TotalFlow_copy: *S2TF
+
+  Stream2SolidsFlow: &S2SF
+    dataRef: "A.SolidsFlow.Field13"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  Stream2SolidsFlow_copy: *S2SF
+
+  Stream2SolutionFlow: &S2SLF
+    dataRef: "A.SolutionFlow.Field13"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  Stream2SolutionFlow_copy: *S2SLF
+
+  Stream2Density: &S2D
+    dataRef: "A.Density.Field13"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  Stream2Density_copy: *S2D
+
+  Stream2SolidsWt%: &S2SW
+    dataRef: "A.SolidsWt%.Field13"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  Stream2SolidsWt%_copy: *S2SW
+
+  Stream2SolutionWt%: &S2SLW
+    dataRef: "A.SolutionWt%.Field13"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  Stream2SolutionWt%_copy: *S2SLW
+
+# ------------------Stream A1---------------------------------------------------------------------------------------------
+
+  StreamA1TotalFlow: &SA1TF
+    dataRef: "A.TotalFlow.Field21"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA1TotalFlow_copy: *SA1TF
+
+  StreamA1SolidsFlow: &SA1SF
+    dataRef: "A.SolidsFlow.Field21"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA1SolidsFlow_copy: *SA1SF
+
+  StreamA1SolutionFlow: &SA1SLF
+    dataRef: "A.SolutionFlow.Field21"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA1SolutionFlow_copy: *SA1SLF
+
+  StreamA1Density: &SA1D
+    dataRef: "A.Density.Field21"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA1Density_copy: *SA1D
+
+  StreamA1SolidsWt%: &SA1SW
+    dataRef: "A.SolidsWt%.Field21"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA1SolidsWt%_copy: *SA1SW
+
+  StreamA1SolutionWt%: &SA1SLW
+    dataRef: "A.SolutionWt%.Field21"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA1SolutionWt%_copy: *SA1SLW
+
+# ------------------Stream A2---------------------------------------------------------------------------------------------------
+
+  StreamA2TotalFlow: &SA2TF
+    dataRef: "A.TotalFlow.Field22"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA2TotalFlow_copy: *SA2TF
+
+  StreamA2SolidsFlow: &SA2SF
+    dataRef: "A.SolidsFlow.Field22"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA2SolidsFlow_copy: *SA2SF
+
+  StreamA2SolutionFlow: &SA2SLF
+    dataRef: "A.SolutionFlow.Field22"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA2SolutionFlow_copy: *SA2SLF
+
+  StreamA2Density: &SA2D
+    dataRef: "A.Density.Field22"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA2Density_copy: *SA2D
+
+  StreamA2SolidsWt%: &SA2SW
+    dataRef: "A.SolidsWt%.Field22"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA2SolidsWt%_copy: *SA2SW
+
+  StreamA2SolutionWt%: &SA2SLW
+    dataRef: "A.SolutionWt%.Field22"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA2SolutionWt%_copy: *SA2SLW
+
+# ------------------Stream A3---------------------------------------------------------------------------------------------------
+
+  StreamA3TotalFlow: &SA3TF
+    dataRef: "A.TotalFlow.Field23"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA3TotalFlow_copy: *SA3TF
+
+  StreamA3SolidsFlow: &SA3SF
+    dataRef: "A.SolidsFlow.Field23"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA3SolidsFlow_copy: *SA3SF
+
+  StreamA3SolutionFlow: &SA3SLF
+    dataRef: "A.SolutionFlow.Field23"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA3SolutionFlow_copy: *SA3SLF
+
+  StreamA3Density: &SA3D
+    dataRef: "A.Density.Field23"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA3Density_copy: *SA3D
+
+  StreamA3SolidsWt%: &SA3SW
+    dataRef: "A.SolidsWt%.Field23"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA3SolidsWt%_copy: *SA3SW
+
+  StreamA3SolutionWt%: &SA3SLW
+    dataRef: "A.SolutionWt%.Field23"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA3SolutionWt%_copy: *SA3SLW
+
+# ------------------Stream A4---------------------------------------------------------------------------------------------------
+
+  StreamA4TotalFlow: &SA4TF
+    dataRef: "A.TotalFlow.Field24"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA4TotalFlow_copy: *SA4TF
+
+  StreamA4SolidsFlow: &SA4SF
+    dataRef: "A.SolidsFlow.Field24"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA4SolidsFlow_copy: *SA4SF
+
+  StreamA4SolutionFlow: &SA4SLF
+    dataRef: "A.SolutionFlow.Field24"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA4SolutionFlow_copy: *SA4SLF
+
+  StreamA4Density: &SA4D
+    dataRef: "A.Density.Field24"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA4Density_copy: *SA4D
+
+  StreamA4SolidsWt%: &SA4SW
+    dataRef: "A.SolidsWt%.Field24"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA4SolidsWt%_copy: *SA4SW
+
+  StreamA4SolutionWt%: &SA4SLW
+    dataRef: "A.SolutionWt%.Field24"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA4SolutionWt%_copy: *SA4SLW
+
+# ------------------Stream A5---------------------------------------------------------------------------------------------------
+
+  StreamA5TotalFlow: &SA5TF
+    dataRef: "A.TotalFlow.Field25"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA5TotalFlow_copy: *SA5TF
+
+  StreamA5SolidsFlow: &SA5SF
+    dataRef: "A.SolidsFlow.Field25"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA5SolidsFlow_copy: *SA5SF
+
+  StreamA5SolutionFlow: &SA5SLF
+    dataRef: "A.SolutionFlow.Field25"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA5SolutionFlow_copy: *SA5SLF
+
+  StreamA5Density: &SA5D
+    dataRef: "A.Density.Field25"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA5Density_copy: *SA5D
+
+  StreamA5SolidsWt%: &SA5SW
+    dataRef: "A.SolidsWt%.Field25"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA5SolidsWt%_copy: *SA5SW
+
+  StreamA5SolutionWt%: &SA5SLW
+    dataRef: "A.SolutionWt%.Field25"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA5SolutionWt%_copy: *SA5SLW
+
+# ------------------Stream A6---------------------------------------------------------------------------------------------------
+
+  StreamA6TotalFlow: &SA6TF
+    dataRef: "A.TotalFlow.Field26"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA6TotalFlow_copy: *SA6TF
+
+  StreamA6SolidsFlow: &SA6SF
+    dataRef: "A.SolidsFlow.Field26"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA6SolidsFlow_copy: *SA6SF
+
+  StreamA6SolutionFlow: &SA6SLF
+    dataRef: "A.SolutionFlow.Field26"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA6SolutionFlow_copy: *SA6SLF
+
+  StreamA6Density: &SA6D
+    dataRef: "A.Density.Field26"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA6Density_copy: *SA6D
+
+  StreamA6SolidsWt%: &SA6SW
+    dataRef: "A.SolidsWt%.Field26"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA6SolidsWt%_copy: *SA6SW
+
+  StreamA6SolutionWt%: &SA6SLW
+    dataRef: "A.SolutionWt%.Field26"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA6SolutionWt%_copy: *SA6SLW
+
+# ------------------Stream A7---------------------------------------------------------------------------------------------------
+
+  StreamA7TotalFlow: &SA7TF
+    dataRef: "A.TotalFlow.Field27"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA7TotalFlow_copy: *SA7TF
+
+  StreamA7SolidsFlow: &SA7SF
+    dataRef: "A.SolidsFlow.Field27"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA7SolidsFlow_copy: *SA7SF
+
+  StreamA7SolutionFlow: &SA7SLF
+    dataRef: "A.SolutionFlow.Field27"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA7SolutionFlow_copy: *SA7SLF
+
+  StreamA7Density: &SA7D
+    dataRef: "A.Density.Field27"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA7Density_copy: *SA7D
+
+  StreamA7SolidsWt%: &SA7SW
+    dataRef: "A.SolidsWt%.Field27"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA7SolidsWt%_copy: *SA7SW
+
+  StreamA7SolutionWt%: &SA7SLW
+    dataRef: "A.SolutionWt%.Field27"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA7SolutionWt%_copy: *SA7SLW
+
+# ------------------Stream A10---------------------------------------------------------------------------------------------------
+
+  StreamA10TotalFlow: &SA10TF
+    dataRef: "A.TotalFlow.Field30"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA10TotalFlow_copy: *SA10TF
+
+  StreamA10SolidsFlow: &SA10SF
+    dataRef: "A.SolidsFlow.Field30"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA10SolidsFlow_copy: *SA10SF
+
+  StreamA10SolutionFlow: &SA10SLF
+    dataRef: "A.SolutionFlow.Field30"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA10SolutionFlow_copy: *SA10SLF
+
+  StreamA10Density: &SA10D
+    dataRef: "A.Density.Field30"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA10Density_copy: *SA10D
+
+  StreamA10SolidsWt%: &SA10SW
+    dataRef: "A.SolidsWt%.Field30"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA10SolidsWt%_copy: *SA10SW
+
+  StreamA10SolutionWt%: &SA10SLW
+    dataRef: "A.SolutionWt%.Field30"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA10SolutionWt%_copy: *SA10SLW
