@@ -541,3 +541,54 @@ cells:
       units: "none"
       decimalPoints: *decimalPointsSolution%
   StreamA10SolutionWt%_copy: *SA10SLW
+
+# ------------------Stream A26---------------------------------------------------------------------------------------------------
+
+  StreamA26TotalFlow: &SA26TF
+    dataRef: "A.TotalFlow.Field45"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow
+  StreamA26TotalFlow_copy: *SA26TF
+
+  StreamA26SolidsFlow: &SA26SF
+    dataRef: "A.SolidsFlow.Field45"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  StreamA26SolidsFlow_copy: *SA26SF
+
+  StreamA26SolutionFlow: &SA26SLF
+    dataRef: "A.SolutionFlow.Field45"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  StreamA26SolutionFlow_copy: *SA26SLF
+
+  StreamA26Density: &SA26D
+    dataRef: "A.Density.Field45"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  StreamA26Density_copy: *SA26D
+
+  StreamA26SolidsWt%: &SA26SW
+    dataRef: "A.SolidsWt%.Field45"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  StreamA26SolidsWt%_copy: *SA26SW
+
+  StreamA26SolutionWt%: &SA26SLW
+    dataRef: "A.SolutionWt%.Field45"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  StreamA26SolutionWt%_copy: *SA26SLW
+
