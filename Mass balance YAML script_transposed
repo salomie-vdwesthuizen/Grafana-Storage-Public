@@ -1,1 +1,78 @@
+---
+# This panelConfig is intended for use with the MinROC flowsheet.
 
+#------------------------------------------------------------------------------
+# YAML Aliases to simplify maintenance
+
+definitions:
+  - &StreamNumber Field2										# Anchor the column "Field2" to alias "StreamNumber"
+  - decimalPoints: &decimalPointsTotalFlow 0 # Define decimal points for total flow
+  - decimalPoints: &decimalPointsSolidsFlow 0 # Define decimal points for solids flow
+  - decimalPoints: &decimalPointsSolutionFlow 0 # Define decimal points for solution flow
+  - decimalPoints: &decimalPointsDensity 0 # Define decimal points for density
+  - decimalPoints: &decimalPointsSolids% 0 # Define decimal points for solids wt%
+  - decimalPoints: &decimalPointsSolution% 0 # Define decimal points for solution wt%
+  - level: &PrimaryCrushingProductLimit 900  # Define Primary Crushing Product limit in tph
+  - level: &JawCrusherProductLimit 270  # Define Jaw Crusher Product limit in tph
+  - level: &JawCrusherScreenOSLimit 160  # Define Jaw Crusher Screen O/S limit in tph
+
+#------------------------------------------------------------------------------
+# Panel Config
+
+cellIdPreamble: "cell-"
+dataRefTransform:					# This paragraph is required in order to reference a single cell in a table. See https://github.com/andymchugh/andrewbmchugh-flow-panel/blob/main/src/README.md
+  namespaced: true
+  queries:
+    A: {tabularKeyColumn: *StreamNumber}			# Define Key column in query A (i.e. mass balance) that will be used in the dataref for each cell.
+
+cells: 
+
+# ------------------Stream 1----------------------	# Instantiate for each stream. Replacements required: "Stream1" -> Streamx; S1 -> Sx; Replace field name so that stream and field name match. x = new stream number.
+
+  Stream1TotalFlow: &S1TF				# Key "Stream1TotalFlow" is the ID of the shape block in the mass balance in draw io. Anchor subparagraph for reuse.
+    dataRef: "A.1.TotalFlow"			# Data to be taken from query A, where "Parameter" = "Total Flow" (i.e. the row) and the column name is "Field3"
+    label:
+      separator: "replace"				# Replace the text in the draw io shape with the data from IDEAS
+      units: "none"
+      decimalPoints: *decimalPointsTotalFlow		# Define number of decimal points via alias anchored at top of script
+  Stream1TotalFlow_copy: *S1TF				# Apply the same subparagraph to the stream table placed adjacent to the stream
+
+  Stream1SolidsFlow: &S1SF
+    dataRef: "A.1.SolidsFlow"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+  Stream1SolidsFlow_copy: *S1SF
+
+  Stream1SolutionFlow: &S1SLF
+    dataRef: "A.1.SolutionFlow"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolutionFlow
+  Stream1SolutionFlow_copy: *S1SLF
+
+  Stream1Density: &S1D
+    dataRef: "A.1.Density"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsDensity
+  Stream1Density_copy: *S1D
+
+  Stream1SolidsWt%: &S1SW
+    dataRef: "A.1.SolidsWt%"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolids%
+  Stream1SolidsWt%_copy: *S1SW
+
+  Stream1SolutionWt%: &S1SLW
+    dataRef: "A.1.SolutionWt%"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolution%
+  Stream1SolutionWt%_copy: *S1SLW
