@@ -22,14 +22,14 @@ cellIdPreamble: "cell-"
 dataRefTransform:					# This paragraph is required in order to reference a single cell in a table. See https://github.com/andymchugh/andrewbmchugh-flow-panel/blob/main/src/README.md
   namespaced: true
   queries:
-    A: {tabularKeyColumn: "StreamNumber"}			# Define Key column in query A (i.e. mass balance) that will be used in the dataref for each cell.
+    A: {tabularKeyColumn: "StreamName"}			# Define Key column in query A (i.e. mass balance) that will be used in the dataref for each cell.
 
 cells: 
 
 # ------------------Stream 1----------------------	# Instantiate for each stream. Replacements required: "Stream1" -> Streamx; S1 -> Sx; Replace field name so that stream and field name match. x = new stream number.
 
   Stream1TotalFlow: &S1TF				# Key "Stream1TotalFlow" is the ID of the shape block in the mass balance in draw io. Anchor subparagraph for reuse.
-    dataRef: "A.1.TotalFlow"			# Data to be taken from query A, where "Parameter" = "Total Flow" (i.e. the row) and the column name is "Field3"
+    dataRef: "A.DMS Effluent.TotalFlow"			# Data to be taken from query A, where "Parameter" = "Total Flow" (i.e. the row) and the column name is "Field3"
     label:
       separator: "replace"				# Replace the text in the draw io shape with the data from IDEAS
       units: "none"
