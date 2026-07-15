@@ -22,7 +22,7 @@ cellIdPreamble: "cell-"
 dataRefTransform:					# This paragraph is required in order to reference a single cell in a table. See https://github.com/andymchugh/andrewbmchugh-flow-panel/blob/main/src/README.md
   namespaced: true
   queries:
-    A: {tabularKeyColumn: StreamNumber}			# Define Key column in query A (i.e. mass balance) that will be used in the dataref for each cell.
+    A: {tabularKeyColumn: "StreamNumber"}			# Define Key column in query A (i.e. mass balance) that will be used in the dataref for each cell.
 
 cells: 
 
