@@ -44,7 +44,7 @@ cells:
 # ------------------Stream 1----------------------	# Instantiate for each stream. Replacements required: "Stream1" -> Streamx; S1 -> Sx; Replace field name so that stream and field name match. x = new stream number.
 
   Stream1TotalFlow: &S1TF				# Key "Stream1TotalFlow" is the ID of the shape block in the mass balance in draw io. Anchor subparagraph for reuse.
-    dataRef: "A.TotalFlow.Field3"			# Data to be taken from query A, where "Parameter" = "Total Flow" (i.e. the row) and the column name is "Field3"
+    dataRef: "A.Total Stream.Field3"			# Data to be taken from query A, where "Parameter" = "Total Flow" (i.e. the row) and the column name is "Field3"
     label:
       separator: "replace"				# Replace the text in the draw io shape with the data from IDEAS
       units: "none"
