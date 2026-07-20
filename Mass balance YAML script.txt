@@ -12,9 +12,9 @@ definitions:
   - decimalPoints: &decimalPointsDensity 0 # Define decimal points for density
   - decimalPoints: &decimalPointsSolids% 0 # Define decimal points for solids wt%
   - decimalPoints: &decimalPointsSolution% 0 # Define decimal points for solution wt%
-  - level: &PrimaryCrushingProductLimit 900  # Define Primary Crushing Product limit in tph
-  - level: &JawCrusherProductLimit 270  # Define Jaw Crusher Product limit in tph
-  - level: &JawCrusherScreenOSLimit 160  # Define Jaw Crusher Screen O/S limit in tph
+  - level: &PrimaryCrushingProductLimit 900  # Define Primary Crushing Product limit in dry tph
+  - level: &JawCrusherProductLimit 270  # Define Jaw Crusher Product limit in dry tph
+  - level: &JawCrusherScreenOSLimit 160  # Define Jaw Crusher Screen O/S limit in dry tph
 
 #------------------------------------------------------------------------------
 # Column Definitions. Cannot alias column names. Check and replace for each stream if table configuration changes.
@@ -99,14 +99,6 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsTotalFlow
-    fillColor:						# Define the thresholds for the data and the fill colour
-      thresholds:
-        - {color: "green", level: 0}
-        - {color: "red", level: *PrimaryCrushingProductLimit}
-    labelColor:						# Define the thresholds for the data and the label colour
-      thresholds:
-        - {color: "black", level: 0}
-        - {color: "white", level: *PrimaryCrushingProductLimit}
   Stream2TotalFlow_copy: *S2TF
 
   Stream2SolidsFlow: &S2SF
@@ -115,6 +107,14 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsSolidsFlow
+    fillColor:						# Define the thresholds for the data and the fill colour
+      thresholds:
+        - {color: "green", level: 0}
+        - {color: "red", level: *PrimaryCrushingProductLimit}
+    labelColor:						# Define the thresholds for the data and the label colour
+      thresholds:
+        - {color: "black", level: 0}
+        - {color: "white", level: *PrimaryCrushingProductLimit}
   Stream2SolidsFlow_copy: *S2SF
 
   Stream2SolutionFlow: &S2SLF
@@ -357,14 +357,6 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsTotalFlow
-    fillColor:						# Define the thresholds for the data and the fill colour
-      thresholds:
-        - {color: "green", level: 0}
-        - {color: "red", level: *JawCrusherProductLimit}
-    labelColor:						# Define the thresholds for the data and the label colour
-      thresholds:
-        - {color: "black", level: 0}
-        - {color: "white", level: *JawCrusherProductLimit}
   StreamA5TotalFlow_copy: *SA5TF
 
   StreamA5SolidsFlow: &SA5SF
@@ -373,6 +365,14 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsSolidsFlow
+    fillColor:						# Define the thresholds for the data and the fill colour
+      thresholds:
+        - {color: "green", level: 0}
+        - {color: "red", level: *JawCrusherProductLimit}
+    labelColor:						# Define the thresholds for the data and the label colour
+      thresholds:
+        - {color: "black", level: 0}
+        - {color: "white", level: *JawCrusherProductLimit}
   StreamA5SolidsFlow_copy: *SA5SF
 
   StreamA5SolutionFlow: &SA5SLF
@@ -415,14 +415,6 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsTotalFlow
-    fillColor:						# Define the thresholds for the data and the fill colour
-      thresholds:
-        - {color: "green", level: 0}
-        - {color: "red", level: *JawCrusherScreenOSLimit}
-    labelColor:						# Define the thresholds for the data and the label colour
-      thresholds:
-        - {color: "black", level: 0}
-        - {color: "white", level: *JawCrusherScreenOSLimit}
   StreamA6TotalFlow_copy: *SA6TF
 
   StreamA6SolidsFlow: &SA6SF
@@ -431,6 +423,14 @@ cells:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsSolidsFlow
+    fillColor:						# Define the thresholds for the data and the fill colour
+      thresholds:
+        - {color: "green", level: 0}
+        - {color: "red", level: *JawCrusherScreenOSLimit}
+    labelColor:						# Define the thresholds for the data and the label colour
+      thresholds:
+        - {color: "black", level: 0}
+        - {color: "white", level: *JawCrusherScreenOSLimit}
   StreamA6SolidsFlow_copy: *SA6SF
 
   StreamA6SolutionFlow: &SA6SLF
