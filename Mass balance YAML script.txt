@@ -94,7 +94,7 @@ cells:
 # ------------------Stream 2---------------------------------------------------------------------------------------------------
 
   Stream2TotalFlow: &S2TF
-    dataRef: "A.TotalFlow.Field13"
+    dataRef: "A.Total Stream.Field13"
     label:
       separator: "replace"
       units: "none"
