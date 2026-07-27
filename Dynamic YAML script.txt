@@ -1,0 +1,49 @@
+---
+# This panelConfig is intended for use with the MinROC dynamic flowsheet.
+
+#------------------------------------------------------------------------------
+# YAML Aliases to simplify maintenance
+
+definitions:
+  - decimalPoints: &decimalPointsSolidsFlow 0  # Define decimal points for solids flow
+  - decimalPoints: &decimalPointsLevel 0  # Define decimal points for level %
+  - level: &BinLow 5  # Define Bin low level
+  - level: &BinHigh 90  # Define Bin high level
+  - level: &BinMid 10  # Define Bin mid working level (low+(high-low)/2)
+
+#------------------------------------------------------------------------------
+# Panel Config
+
+cellIdPreamble: "cell-"
+
+cells: 
+
+  ScrubberBinFeed:					# Key "ScrubberBinFeed" is the ID of the shape block svg diagram.
+    dataRef: "SCRStockpileFeed"				# Data to be taken from time series data labelled "SCRStockpileFeed"
+    label:
+      separator: "replace"				# Replace the text in the draw io shape with the data from IDEAS
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow		# Define number of decimal points via alias anchored at top of script
+
+
+  ScrubberBinDischarge:	
+    dataRef: "SCRFeed"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsSolidsFlow
+
+  ScrubberBinLevel:	
+    dataRef: "StockpileLVL"
+    label:
+      separator: "replace"
+      units: "none"
+      decimalPoints: *decimalPointsLevel
+    fillColor:
+      thresholds:
+        - {color: "red", level: *BinLow}
+        - {color: "green", level: *BinMid}
+        - {color: "red", level: *BinHigh}
+
+
+
