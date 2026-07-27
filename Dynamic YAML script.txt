@@ -49,3 +49,9 @@ cells:
         - {color: "white", level: *BinLow}
         - {color: "black", level: *BinMid}
         - {color: "white", level: *BinHigh}
+
+  Level0-5:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "blue", level: 5}
