@@ -42,7 +42,6 @@ cells:
     fillColor:
       thresholds:
         - {color: "red", level: *BinLow}
-        - {color: "green", level: *BinMid}
         - {color: "red", level: *BinHigh}
 
 
