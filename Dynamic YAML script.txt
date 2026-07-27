@@ -44,3 +44,8 @@ cells:
         - {color: "red", level: *BinLow}
         - {color: "green", level: *BinMid}
         - {color: "red", level: *BinHigh}
+    labelColor:						# Define the thresholds for the data and the label colour
+      thresholds:
+        - {color: "white", level: *BinLow}
+        - {color: "black", level: *BinMid}
+        - {color: "white", level: *BinHigh}
