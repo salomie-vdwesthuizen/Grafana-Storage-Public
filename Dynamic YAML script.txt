@@ -50,15 +50,27 @@ cells:
         - {color: "black", level: *BinMid}
         - {color: "white", level: *BinHigh}
 
-  Level0-5:	
+  Level0-4:	
     dataRef: "StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
-        - {color: "blue", level: 5}
-  Level5-10:	
+        - {color: "blue", level: 4}
+  Level5-8:	
     dataRef: "StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
-        - {color: "blue", level: 10}
+        - {color: "blue", level: 8}
+  Level9-12:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 12}
+  Level3-16:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 16}
