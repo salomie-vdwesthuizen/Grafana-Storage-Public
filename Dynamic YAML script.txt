@@ -8,7 +8,7 @@ definitions:
   - decimalPoints: &decimalPointsSolidsFlow 0  # Define decimal points for solids flow
   - decimalPoints: &decimalPointsLevel 0  # Define decimal points for level %
   - level: &BinLow 5  # Define Bin low level
-  - level: &BinHigh 90  # Define Bin high level
+  - level: &BinHigh 40  # Define Bin high level
   - level: &BinMid 10  # Define Bin mid working level (low+(high-low)/2)
 
 #------------------------------------------------------------------------------
