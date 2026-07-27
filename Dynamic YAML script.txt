@@ -54,4 +54,11 @@ cells:
     dataRef: "StockpileLVL"
     fillColor:
       thresholds:
+        - {color: "white", level: 0}
         - {color: "blue", level: 5}
+  Level5-10:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 10}
