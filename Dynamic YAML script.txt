@@ -9,7 +9,7 @@ definitions:
   - decimalPoints: &decimalPointsLevel 0  # Define decimal points for level %
   - level: &BinLow 5  # Define Bin low level
   - level: &BinHigh 40  # Define Bin high level
-  - level: &BinMid 10  # Define Bin mid working level (low+(high-low)/2)
+  - level: &BinMid 6  # Define Bin mid working level (low+(high-low)/2)
 
 #------------------------------------------------------------------------------
 # Panel Config
@@ -42,7 +42,5 @@ cells:
     fillColor:
       thresholds:
         - {color: "red", level: *BinLow}
+        - {color: "green", level: *BinMid}
         - {color: "red", level: *BinHigh}
-
-
-
