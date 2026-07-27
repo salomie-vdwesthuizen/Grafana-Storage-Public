@@ -68,9 +68,63 @@ cells:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 12}
-  Level3-16:	
+  Level13-16:	
     dataRef: "StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 16}
+  Level17-20:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 20}
+  Level21-24:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 24}
+  Level25-28:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 28}
+  Level29-32:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 32}
+  Level33-36:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 36}
+  Level37-40:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 40}
+  Level41-44:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 44}
+  Level45-48:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 48}
+  Level49-52:	
+    dataRef: "StockpileLVL"
+    fillColor:
+      thresholds:
+        - {color: "white", level: 0}
+        - {color: "blue", level: 52}
