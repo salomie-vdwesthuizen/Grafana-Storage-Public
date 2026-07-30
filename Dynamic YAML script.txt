@@ -27,14 +27,14 @@ cells:
 
 
   ScrubberBinDischarge:	
-    dataRef: "SCRFeed"
+    dataRef: "value SCRFeed"
     label:
       separator: "replace"
       units: "none"
       decimalPoints: *decimalPointsSolidsFlow
 
   ScrubberBinLevel:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     label:
       separator: "replace"
       units: "none"
