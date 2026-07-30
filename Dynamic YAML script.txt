@@ -8,8 +8,8 @@ definitions:
   - decimalPoints: &decimalPointsSolidsFlow 0  # Define decimal points for solids flow
   - decimalPoints: &decimalPointsLevel 0  # Define decimal points for level %
   - level: &BinLow 5  # Define Bin low level
-  - level: &BinHigh 40  # Define Bin high level
-  - level: &BinMid 6  # Define Bin mid working level (low+(high-low)/2)
+  - level: &BinHigh 90  # Define Bin high level
+  - level: &BinMid 6  # Define Bin mid level
 
 #------------------------------------------------------------------------------
 # Panel Config
@@ -34,7 +34,7 @@ cells:
       decimalPoints: *decimalPointsSolidsFlow
 
   ScrubberBinLevel:	
-    dataRef: "value StockpileLVL"
+    dataRef: "value value StockpileLVL"
     label:
       separator: "replace"
       units: "none"
@@ -51,151 +51,151 @@ cells:
         - {color: "white", level: *BinHigh}
 
   Level0-4:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 4}
   Level5-8:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 8}
   Level9-12:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 12}
   Level13-16:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 16}
   Level17-20:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 20}
   Level21-24:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 24}
   Level25-28:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 28}
   Level29-32:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 32}
   Level33-36:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 36}
   Level37-40:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 40}
   Level41-44:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 44}
   Level45-48:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 48}
   Level49-52:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 52}
   Level53-56:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 56}
   Level57-60:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 60}
   Level61-64:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 64}
   Level65-68:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 68}
   Level69-72:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 72}
   Level73-76:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 76}
   Level77-80:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 80}
   Level81-84:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 84}
   Level85-88:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 88}
   Level89-92:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 92}
   Level93-96:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
         - {color: "blue", level: 96}
   Level97-100:	
-    dataRef: "StockpileLVL"
+    dataRef: "value StockpileLVL"
     fillColor:
       thresholds:
         - {color: "white", level: 0}
