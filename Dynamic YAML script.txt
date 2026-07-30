@@ -19,7 +19,7 @@ cellIdPreamble: "cell-"
 cells: 
 
   ScrubberBinFeed:					# Key "ScrubberBinFeed" is the ID of the shape block svg diagram.
-    dataRef: "SCRStockpileFeed"				# Data to be taken from time series data labelled "SCRStockpileFeed"
+    dataRef: "value SCRStockpileFeed"				# Data to be taken from time series data labelled "SCRStockpileFeed"
     label:
       separator: "replace"				# Replace the text in the draw io shape with the data from IDEAS
       units: "none"
