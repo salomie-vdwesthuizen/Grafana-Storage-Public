@@ -34,7 +34,7 @@ cells:
       decimalPoints: *decimalPointsSolidsFlow
 
   ScrubberBinLevel:	
-    dataRef: "value value StockpileLVL"
+    dataRef: "value StockpileLVL"
     label:
       separator: "replace"
       units: "none"
