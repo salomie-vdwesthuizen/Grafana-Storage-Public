@@ -10,7 +10,7 @@ definitions:
   - level: &BinLow 5  # Define Bin low level
   - level: &BinHighHigh 90  # Define Bin high level
   - level: &BinLowHigh 6  # Define Bin level between low and hig
-  - level: &BinLowHigh 70  # Define Bin mid level
+  - level: &BinHigh 70  # Define Bin mid level
 
 #------------------------------------------------------------------------------
 # Panel Config
