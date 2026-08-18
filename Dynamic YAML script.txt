@@ -8,8 +8,9 @@ definitions:
   - decimalPoints: &decimalPointsSolidsFlow 0  # Define decimal points for solids flow
   - decimalPoints: &decimalPointsLevel 0  # Define decimal points for level %
   - level: &BinLow 5  # Define Bin low level
-  - level: &BinHigh 90  # Define Bin high level
-  - level: &BinMid 6  # Define Bin mid level
+  - level: &BinHighHigh 90  # Define Bin high level
+  - level: &BinLowHigh 6  # Define Bin level between low and hig
+  - level: &BinLowHigh 70  # Define Bin mid level
 
 #------------------------------------------------------------------------------
 # Panel Config
@@ -42,13 +43,15 @@ cells:
     fillColor:
       thresholds:
         - {color: "red", level: *BinLow}
-        - {color: "green", level: *BinMid}
-        - {color: "red", level: *BinHigh}
+        - {color: "green", level: *BinLowHigh}
+        - {color: "orange", level: *BinHigh}
+        - {color: "red", level: *BinHighHigh}
     labelColor:						# Define the thresholds for the data and the label colour
       thresholds:
         - {color: "white", level: *BinLow}
-        - {color: "black", level: *BinMid}
-        - {color: "white", level: *BinHigh}
+        - {color: "black", level: *BinLowHigh}
+        - {color: "black", level: *BinHigh}
+        - {color: "white", level: *BinHighHigh}
 
   Level0-4:	
     dataRef: "value StockpileLVL"
